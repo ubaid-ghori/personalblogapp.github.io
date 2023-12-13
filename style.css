@@ -1,0 +1,318 @@
+/* label {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#blog-form,
+#user-info>input,
+textarea {
+    display: block;
+    width: 300px;
+    margin: 10px 0px;
+    height: 30px;
+    border: 1px solid lightblue;
+}
+
+#user-info>img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+#updateBtn {
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+
+.blog {
+    background-color: aliceblue;
+    border: 1px solid antiquewhite;
+    margin: 20px 0px;
+    padding: 5px;
+}
+
+
+#chatcontainer{
+    height: 90vh;
+    margin: 10px;
+    border: 1px solid black;
+    display: flex;
+}
+
+#chat_users{
+    width: 200px;
+    height: 100%;
+    overflow: scroll;
+    border-right: 1px solid black;
+}
+#chat_msgs_div{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat_msgs{
+    flex-grow: 1;
+    height: 90%;
+    overflow: scroll;
+}
+
+#chat_input{
+    width: 350px;
+    height: 30px;
+    margin: 3px;
+}
+
+
+#chat_send_msg{
+    height: 35px;
+}
+
+.chat_user_div{
+    height: 60px;
+    border-bottom: 1px solid lightcyan;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat_user_div > img{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+.chat_user_div > span{
+   font-size: 16px;
+   font-weight: 200;
+   padding-left: 10px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.chat-msg-div{
+    padding: 5px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 10px 3px;
+    max-width: 60%;
+}
+
+.user-msg{
+    background-color: greenyellow;
+}
+
+.another-user-msg{
+    background-color: darkgrey;
+} */
+
+
+/* */
+
+
+    /* body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }  */
+
+    #authContainer {
+        background-color: black;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 400px;
+        align-items: center;
+        justify-content: center;
+        margin-left: 35%;
+       
+    }
+    h3 {
+        /* text-align: center; */
+        color: #333333;
+        margin-bottom: 20px;
+    }
+    form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .form-label {
+        margin-bottom: 7px;
+        color: white;
+        font-weight: 600;
+    }
+
+   .form-label> input {
+        margin-top: 6px;
+        padding: 10px;
+        margin-bottom: 2px;
+        border: 2px solid #dddddd;
+        border-radius: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: black;
+        color: #f7f7f7;
+    }
+
+    .register {
+        background-color: yellow;
+        color: black;
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: bolder;
+        transition: background-color 0.3s ease;
+        height: 40px;
+        border-radius: 30px;
+        outline: none;
+        border: none;
+    }
+    .signup-img{
+        margin-bottom: 10px;
+        border-radius: 10px 100px / 120px;
+        height: 130px;
+    }
+
+   
+
+    #signup_div {
+        display: none;
+       
+    }
+
+#goToLoginBtn{
+    text-align: center;
+    cursor: pointer;
+    color: yellow;
+    font-size: 20px;
+}
+
+#goToSignupBtn{
+    text-align: center;
+    cursor: pointer;
+    color: yellow;
+    font-size: 20px;
+}
+.login-img{
+    margin-bottom: 10px;
+    /* border-radius: 10px 100px / 120px; */
+    height: 190px;
+}
+
+
+.upload{
+    width: 110px; height: 45px; margin-left: 17%; margin-bottom: 15px; border-radius: 10px;  background-color: rgb(45, 132, 132); color: antiquewhite ; border: none; outline: none; cursor: pointer; font-size: 15px;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.blog{
+    margin-left: 6%;
+    width: 60%;
+    box-shadow: 5px 2px 10px 2px rgba(0, 0, 0, 0.439);
+}
+.tittle{
+    font-size: 30px;
+    margin-left: 25%;
+}
+.logout-h3{
+    color: white; cursor: pointer; font-size: 22px; margin-left: 70%;
+    margin-top: 15px;
+}
+.blog-name{
+    text-align: center;
+    font-size: 40px;
+}
+.blog-description{
+    font-size: 30px;
+    margin-left: 20%;
+    font-weight: bolder;
+}
+.editbtn{
+    outline: none;
+    border: none;
+    background-color: rgb(45, 132, 132);
+    width: 100px;
+    color: white;
+    height: 33px;
+    font-size: 18px;
+    margin-left: 15%;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+/* .deletebtn{
+    po
+} */
+
+
+#user-info>input,
+textarea {
+    display: block;
+    width: 300px;
+    margin: 10px 0px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#user-info>img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 35%;
+}
+
+#updateBtn {
+    background-color: rgb(45, 132, 132);
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    width: 60px;
+}
+#user-info{
+    box-shadow: 5px 10px 5px 1px black;
+    border: 1px solid black;
+    width: 70%;
+    margin-left: 10%;
+}
+#user-info>input{
+    margin-left: 25%;
+}
+.nav2{
+    display: flex; background-color: rgb(45, 132, 132); height: 10vh; top: 0%; width: 100%; margin-bottom: 3%;
+}
+#user-pro{
+    color: white; margin-bottom: 19px; margin-left: 10px;
+}
+.delbtn{
+    outline: none;
+    border: none;
+    background-color: rgb(45, 132, 132);
+    width: 100px;
+    color: white;
+    height: 33px;
+    font-size: 18px;
+    margin-left: 10%;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

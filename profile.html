@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div  style="display: flex; background-color: rgb(45, 132, 132); height: 10vh; top: 0%; width: 100%; margin-bottom: 3%; " id="nav2">
+        <h1 id="user-pro" style="color: white; margin-bottom: 10px;">User Profile</h1>
+    <a href="chat.html" style="text-decoration: none; color: white ; margin-left: 70%; margin-top: 20px; font-size: 35px; font-weight: bolder;">Chat</a>
+    </div>
+    
+    <form id="user-info">
+        <img id="user_img" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"  />
+        <input  id="user_profile_img" type="file" name="profileImg" style="border: none; "/>
+        <input required id="user_name" type="text" placeholder="Full Name"  name="fullname" style=""/>
+        <input required id="user_email" type="email" placeholder="Email" disabled name="email" />
+        <input required id="user_number" type="number" placeholder="Phone Number" name="phone" />
+        <textarea id="user_about" placeholder="About me" name="about" style="margin-left: 25%;"></textarea>
+        <input required type="submit" value="Update" id="updateBtn">
+    </form>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
