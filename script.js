@@ -219,41 +219,32 @@ async function getBlogs(q = query(collection(db, 'blogs'), where("user", "==", u
   const querySnapshot = await getDocs(q);
   if (querySnapshot.empty) return blogContainerDiv.innerHTML = null;
   blogContainerDiv.innerHTML = null;
-
   querySnapshot.forEach(async (blog) => {
     let blogInfo = blog.data();
     const userRef = doc(db, "users", blogInfo.user);
     const userInfo = await getDoc(userRef);
     blogInfo.userInfo = userInfo.data();
-
-    const { title, description, timestamp, userInfo: { fullname } } = blogInfo;
-
-    // Format the timestamp using JavaScript Date object
+    const { title, description, timestamp, userInfo: { fullname, profileImg } } = blogInfo;
     const dateObj = timestamp.toDate();
     const formattedTimestamp = dateObj.toLocaleString('en-US', { month: 'short', day: 'numeric' });
-
     const div = document.createElement('div');
-   
     const h1 = document.createElement('h1');
     const h2 = document.createElement('h2');
     const p = document.createElement('p');
+    const images = document.createElement('img');
     const editButton = document.createElement('button');
-    const DeleteButton = document.createElement('button'); 
-
-    
-    h1.innerText = "tittle:"+title;
-    h2.innerText = `Blog by ${fullname} on ${formattedTimestamp} -2023`;
-    p.innerText = "description:"+description;
-    
+    const DeleteButton = document.createElement('button');
+    h1.innerText = "Title: " + title;
+    h2.innerText = `Blog by ${fullname} on ${formattedTimestamp} - 2023`;
+    p.innerText = "Description: " + description;
+    images.src = profileImg || 'default-profile-image-url';
     editButton.innerText = 'Edit';
     DeleteButton.innerText = 'Delete';
     editButton.className='editbtn'
     editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Edit';
     DeleteButton.innerHTML='<i class="fa-solid fa-trash"></i> Delete'
-
-    editButton.addEventListener('click', () => editBlog(blog.id, h3));
-
-    DeleteButton.id = blog.id; // Set the ID as blog.id
+    editButton.addEventListener('click', () => editBlog(blog.id,h1));
+    DeleteButton.id = blog.id; 
     DeleteButton.addEventListener('click', async function() {
       console.log(this)
       const docref = doc(db, 'blogs', this.id)
@@ -261,18 +252,19 @@ async function getBlogs(q = query(collection(db, 'blogs'), where("user", "==", u
       await deleteDoc(docref)
       getBlogs()
     })
-    
-
     div.className = 'blog';
+    images.className='blog-img'
     h1.className='tittle'
     h2.className='blog-name'
     p.className='blog-description'
     DeleteButton.className='delbtn'
     div.appendChild(h2);
+    div.appendChild(images)
     div.appendChild(h1);
     div.appendChild(p);
     div.appendChild(editButton);
     div.appendChild(DeleteButton);
+  
    
     blogContainerDiv.appendChild(div);
   });
@@ -285,6 +277,7 @@ function editBlog(blogId, titleElement) {
     updateBlogTitle(blogId, newTitle, titleElement);
   }
 }
+
 
 async function updateBlogTitle(blogId, newTitle, titleElement) {
   try {
@@ -299,32 +292,6 @@ async function updateBlogTitle(blogId, newTitle, titleElement) {
 // ... (Remaining code)
 
 
-
-filterBtn?.addEventListener('click', () => {
-  let filter;
-  let q;
-  document.getElementsByName('query').forEach((data) => {
-    if (data.checked) {
-      filter = data.value
-    }
-  })
-  if (filter === 'All') {
-    q = query(collection(db, 'blogs'), where("user", "==", uid))
-  }
-  if (filter === 'Beginner') {
-    q = query(collection(db, 'blogs'), where("level", "==", "Beginner"), where("user", "==", uid))
-  }
-  if (filter === 'Intermediate') {
-    q = query(collection(db, 'blogs'), where("level", "==", "Intermediate"), where("user", "==", uid))
-  }
-  if (filter === 'Expert') {
-    q = query(collection(db, 'blogs'), where("level", "==", "Expert"), where("user", "==", uid))
-  }
-  getBlogs(q)
-  console.log(filter)
-  console.log(q)
-
-})
 
 
 async function getUserInfo() {

@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog web</title>
+    <link rel="shortcut icon" href="/download.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div  style="display: flex; background-color: rgb(45, 132, 132); height: 10vh; top: 0%; width: 100%; margin-bottom: 3%; " id="nav2">
-        <h1 id="user-pro" style="color: white; margin-bottom: 10px;">User Profile</h1>
-    <a href="chat.html" style="text-decoration: none; color: white ; margin-left: 70%; margin-top: 20px; font-size: 35px; font-weight: bolder;">Chat</a>
+        <!-- <h1 id="user-pro" style="color: white; margin-bottom: 10px;  font-family: 'Roboto', sans-serif;">User Profile</h1> -->
+        <a href="index.html" style="color: white; margin-bottom: 10px;  font-family: 'Roboto', sans-serif; text-decoration: none; margin-top: 20px; margin-left: 5%; font-weight: bolder; font-size:25px ;">Add blogs</a>
+        <h3 id="logout"  class="logout-h3" >Logout</h3>
+    <!-- <a href="chat.html" style="text-decoration: none; color: white ;  margin-top: 20px; font-size: 35px; font-weight: bolder;">Chat</a> -->
+   
     </div>
-    
+    <div style="box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.439); color: black; height: 10vh;   width: 100%; margin-bottom: 10px; " id="das" >
+        <h1 style="padding: 5px; margin-left: 5%; font-weight: bolder; font-size: 40px;" >user Profile</h1>
+      </div>  
     <form id="user-info">
         <img id="user_img" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"  />
         <input  id="user_profile_img" type="file" name="profileImg" style="border: none; "/>
@@ -19,7 +25,7 @@
         <input required id="user_email" type="email" placeholder="Email" disabled name="email" />
         <input required id="user_number" type="number" placeholder="Phone Number" name="phone" />
         <textarea id="user_about" placeholder="About me" name="about" style="margin-left: 25%;"></textarea>
-        <input required type="submit" value="Update" id="updateBtn">
+        <input required type="submit" value="Update" id="updateBtn" style="border: none; outline: none;">
     </form>
     <script type="module" src="script.js"></script>
 </body>
