@@ -264,8 +264,6 @@ async function getBlogs(q = query(collection(db, 'blogs'), where("user", "==", u
     div.appendChild(p);
     div.appendChild(editButton);
     div.appendChild(DeleteButton);
-  
-   
     blogContainerDiv.appendChild(div);
   });
 }
